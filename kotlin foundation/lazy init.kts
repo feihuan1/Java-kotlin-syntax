@@ -57,3 +57,27 @@ phoneShop.open("Feihuan")
 phoneShop.isOpen // true
 phoneShop.manager  // feihuan
 phoneShop.checkInventory()
+
+class Counter {
+
+    val sumOfOneToTen = 55
+
+    // prevent complex code running when not needed
+    private val sumOfOneToFifty: Int by lazy {
+        var total = 0
+
+        for(i in 1..50) {
+            total += i
+        }
+
+        total
+    }
+
+    fun calculateSumOf1to50() = sumOfOneToFifty
+
+}
+
+var counter = Counter()
+
+println(counter.calculateSumOf1to50())
+println(counter.sumOfOneToTen)
